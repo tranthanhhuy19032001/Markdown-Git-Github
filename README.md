@@ -263,7 +263,23 @@ git push -u origin main
     ```
 <a name="gitrevert"></a>
 ### 5. Git revert
+- Revert the commit.
+- Once you have the commit hash, use the git revert command followed by the commit hash.
+  ```
+    git revert <commit-hash>
+  ```
+
+- If you are reverting the last commit and know it's the HEAD of your current branch, you can use HEAD as a shorthand:
+```
+    git revert HEAD
+```
+- Git will then open a text editor to allow you to edit the commit message for the new revert commit. You can accept the default message or modify it to provide more context. Save and close the editor to complete the revert. Resolve any conflicts (if necessary).
+
 <a name="gitmerge"></a>
 ### 6. Git merge (regularly)
+```
+git checkout destination_branch_name
+git merge source_branch_name
+```
 <a name="gitdebase"></a>
 ### 7. Git debase
