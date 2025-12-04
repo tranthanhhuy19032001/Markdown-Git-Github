@@ -1,139 +1,122 @@
-# Git-Github
+# Git & GitHub Guide
 
-### Mục lục
-[I. Mở đầu](#Modau)
+## Table of Contents
 
-[II. Ngôn ngữ Markdown](#ngonngumarkdown)
-	
-[III. Các thao tác với git và github](#cacthaotacvoigitvagithub)
-- [1. Initialize project](#initializeproject)
-- [2. Git basic (regularly)](#gitbasic)
-- [3. Git reset)](#gitreset)
-- [4. Git amend)](#gitamend)
-- [5. Git revert)](#gitrevert)
-- [6. Git merge (regularly))](#gitmerge)
-- [7. Git debase)](#gitdebase)
-- [8. Git cherry-pick)](#gitcherrypick)
-- [8. Resolve conflicts)](#resolveconflicts)
+- [I. Introduction](#introduction)
+- [II. Markdown Language](#markdown-language)
+  - [1. Title Headings](#title-headings)
+  - [2. Inserting Links & Images](#inserting-links-images)
+  - [3. Bold & Italics](#bold-italics)
+  - [4. Inline & Block Quotes](#inline-block-quotes)
+  - [5. Bullet Lists](#bullet-lists)
+  - [6. Creating Tables](#creating-tables)
+  - [Tips for Markdown](#markdown-tips)
+- [III. Git & GitHub Operations](#git-github-operations)
+  - [1. Initialize Project](#initialize-project)
+  - [2. Git Basics](#git-basics)
+  - [3. Git Reset](#git-reset)
+  - [4. Git Amend](#git-amend)
+  - [5. Git Revert](#git-revert)
+  - [6. Git Merge](#git-merge)
+  - [7. Git Debase](#git-debase)
+  - [8. Git Cherry-pick](#git-cherry-pick)
+  - [9. Resolving Conflicts](#resolving-conflicts)
 
-===========================
+---
 
-<a name="Modau"></a>
-## I. Mở đầu
-Git và Github đã trở thành các công cụ không thể thiếu đối với lập trình viên hiện đại. Việc kiểm soát phiên bản mã nguồn giúp dễ dàng quản lý, chia sẻ, phối hợp cùng đồng đội, và bảo vệ lịch sử phát triển của dự án phần mềm. Từ những thao tác cơ bản đến các kỹ thuật nâng cao, việc nắm vững cách sử dụng Git và Github sẽ giúp bạn chủ động hơn trong quá trình làm việc, đảm bảo chất lượng và hiệu quả của sản phẩm. 
+## I. Introduction
 
-Tài liệu này ra đời nhằm cung cấp cho bạn kiến thức tổng quan về Git, Github và Markdown, cũng như hướng dẫn chi tiết các thao tác thực tế và mẹo hữu ích. Hy vọng bạn sẽ tìm thấy trong đây những kiến thức bổ ích để áp dụng thuận lợi vào các dự án của mình.
-<a name="ngonngumarkdown"></a>
-## II. Ngôn ngữ Markdown
+Git and GitHub are essential tools for modern developers. Version control makes managing, sharing, and collaborating on code efficient and safe.
 
-Ngôn ngữ này khá đơn giản, bạn có thể đọc tại [đây](http://daringfireball.net/projects/markdown/syntax) để biết cách sử dụng.
+This document provides a concise overview of Git, GitHub, and Markdown, with step-by-step instructions for common operations and useful tips.
 
-Nhưng với tôi, tôi không dùng hết từng ấy thứ cho nên tôi chỉ nhớ một số cái tôi hay dùng, cách tôi dùng như sau:
+---
 
-Tạo một file có tên bất kỳ với đuôi .md. Có thể dùng `notepad`, `notepad++`, `vi`, `nano`,... hay bất cứ thứ gì mà bạn muốn.
+## II. Markdown Language
 
-Một số phương pháp tôi hay sử dụng để viết:
+Markdown is a simple markup language. For the complete syntax, see [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax).
 
-<a name="thetieude"></a>
-### 1. Thẻ tiêu đề
+Below are the core features commonly used:
 
-Markdown sử dụng kí tự # để bắt đầu cho các thẻ tiêu đề, có thể dùng từ 1 đến 6 ký tự # liên tiếp. Mức độ riêu đề giảm dần từ 1 đến 6
+### <a name="title-headings"></a>1. Title Headings
 
-Tùy mục đích và ý thích bạn có thể sử dụng cách này để thể hiện các chỉ mục khác nhau.
+Use `#` to start headings. More `#` means smaller heading.
 
-Ví dụ:
+Example:
 
-```
-# 1.Tiêu đề cấp 1
-```
-
-# 1.Tiêu đề cấp 1
-
-```
-## 2.Tiêu đề cấp 2
+```markdown
+# Heading 1
+## Heading 2
+###### Heading 6
 ```
 
-## 2.Tiêu đề cấp 2
+Rendered:
 
-```
-###### 6.Tiêu đề cấp 6
-```
+# Heading 1
+## Heading 2
+###### Heading 6
 
-###### 6.Tiêu đề cấp 6
+---
 
-<a name="chenlinkchenanh"></a>
-### 2. Chèn link, chèn ảnh
+### <a name="inserting-links-images"></a>2. Inserting Links & Images
 
-Để chèn hyperlink bạn chỉ cần paste luôn linh đó vào file .md
+- **Paste a URL for a simple link:**
 
-```
+```markdown
 https://github.com
 ```
-
 https://github.com
 
-Hoặc bạn cũng có thể sử dụng cú pháp sau để thu ngắn đường dẫn của link
+- **Shorten links:**
 
+```markdown
+[GitHub](https://github.com)
 ```
-[Github](https://github.com)
-```
+[GitHub](https://github.com)
 
-Kết quả là:
+- **Insert images:**
 
-[Github](https://github.com)
-
-Để chèn ảnh thì bạn hãy sử dụng cú pháp sau:
-
-```
-<img src="link_anh_cua_ban">
+```markdown
+<img src="your_image_url">
 ```
 
-Tôi thường sử dụng công cụ [Lightshot](https://app.prntscr.com/en/index.html) để chụp ảnh màn hình và up hình đó lên trang http://i.imgur.com/ để lấy đường dẫn ảnh đưa vào Github
+*Tip: For screenshots, use [Lightshot](https://app.prntscr.com/en/index.html) and upload to [Imgur](https://imgur.com/) for direct link.*
 
-Hai công cụ này khá dễ sử dụng, bạn chỉ cần chụp màn hình bằng Lightshot ấn Ctrl + C để copy và Ctrl + V để paste vào trình duyệt tại trang web http://i.imgur.com/
+---
 
-<a name=kytuindaminnghieng></a>
-### 3. Ký tự in đậm, in nghiêng
+### <a name="bold-italics"></a>3. Bold & Italics
 
-- Để in đậm một đoạn text  bạn chỉ cần làm như sau:
+- **Bold:** `**text**` → **text**
+- **Italics:** `*text*` → *text*
 
-```
-**từ cần in đậm**
-```
+Example:
 
-**từ cần in đậm**
-
-- Để in nghiên một đoạn text  bạn chỉ cần làm như sau:
-
-```
-*từ cần in nghiêng*
+```markdown
+**Bold text**
+*Italic text*
 ```
 
-*từ cần in nghiêng*
+**Bold text**
 
-<a name="trichdanbochu"></a>
-### 4. Trích dẫn, bo chữ
+*Italic text*
 
-Để bo một đoạn text thì bạn chỉ cần sử dụng cú pháp sau:
+---
 
-```
-`đoạn cần bo`
-```
+### <a name="inline-block-quotes"></a>4. Inline & Block Quotes
 
-Kết quả là: `đoạn cần bo`
-
-Để làm nổi bật một đoạn, chẳng hạn như một đoạn shell hay file cấu hình bạn có thể sử dụng cú pháp như ví dụ sau:
+- **Inline code:** `` `code` `` → `code`
+- **Multi-line/code block:**
 
     ```sh
     auto eth0
     iface eth0 inet static
     ipaddress 10.10.10.10
-	netmask 255.255.255.0
-	gateway 10.10.10.1
-	dns-nameservers 8.8.8.8
+    netmask 255.255.255.0
+    gateway 10.10.10.1
+    dns-nameservers 8.8.8.8
     ```
 
-Kết quả như sau:
+Result:
 
 ```sh
 auto eth0
@@ -144,216 +127,202 @@ gateway 10.10.10.1
 dns-nameservers 8.8.8.8
 ```
 
-<a name="gachdaudong"></a>
-### 5. Gạch đầu dòng
+---
 
-Để sử dụng gạch đầu dòng bạn chỉ cần sử dụng cú pháp sau:
+### <a name="bullet-lists"></a>5. Bullet Lists
 
-```
-- Gạch đầu dòng thứ nhất
-  
-  - Thụt với đầu dòng 1
-  
-  - Thụt với đầu dòng 1
- 
-- Gạch đầu dòng thứ hai
-  
-  - Thụt với đầu dòng 2
-  
-  - Thụt với đầu dòng 2
-  
+```markdown
+- First item
+  - Indented item
+- Second item
 ```
 
-- Gạch đầu dòng thứ nhất
-  
-  - Thụt với đầu dòng 1
-  
-  - Thụt với đầu dòng 1
-  
-- Gạch đầu dòng thứ hai
-  
-  - Thụt với đầu dòng 2
-  
-  - Thụt với đầu dòng 2
-  
+- First item
+  - Indented item
+- Second item
 
-<a name="taobang"></a>
-### 6. Tạo bảng
+---
 
-Bạn có thể sử dụng cú pháp sau để tạo bảng:
+### <a name="creating-tables"></a>6. Creating Tables
 
-```
-| Cột 1 Hàng 1 | Cột 2 | Cột 3| Cột 4 |
-|--------------|-------|------|-------|
-| Hàng 2 | 2 x 1 | 2 x 2 | 2 x 3 | 2 x 4 |
-| Hàng 3 | 3 x 1 | 3 x 2 | 3 x 3 | 3 x 4 |
-| Hàng 4 | 4 x 1 | 4 x 2 | 4 x 3 | 4 x 4 |
+```markdown
+| Header 1      | Header 2 | Header 3    | Header 4 |
+|---------------|----------|-------------|----------|
+| Row 2         | 2 x 1    | 2 x 2       | 2 x 3    |
+| Row 3         | 3 x 1    | 3 x 2       | 3 x 3    |
+| Row 4         | 4 x 1    | 4 x 2       | 4 x 3    |
 ```
 
-Kết quả:
+| Header 1      | Header 2 | Header 3    | Header 4 |
+|---------------|----------|-------------|----------|
+| Row 2         | 2 x 1    | 2 x 2       | 2 x 3    |
+| Row 3         | 3 x 1    | 3 x 2       | 3 x 3    |
+| Row 4         | 4 x 1    | 4 x 2       | 4 x 3    |
 
-| Cột 1 Hàng 1 | Cột 2 | Cột 3| Cột 4 |
-|--------------|-------|------|-------|
-| Hàng 2 | 2 x 1 | 2 x 2 | 2 x 3 | 2 x 4 |
-| Hàng 3 | 3 x 1 | 3 x 2 | 3 x 3 | 3 x 4 |
-| Hàng 4 | 4 x 1 | 4 x 2 | 4 x 3 | 4 x 4 |
+---
 
-<a name="meo"></a>
-###*Mẹo:*
+### <a name="markdown-tips"></a>Tips for Markdown
 
-- Sử dụng trang http://markdownlivepreview.com/ paste vào đó đoạn markdown bạn viết và xem trước để chỉnh sửa cho phù hợp.
+> - **Preview Live:** Use [Markdown Live Preview](http://markdownlivepreview.com/) to see and edit your Markdown instantly.
+> - **Reuse Snippets:** Check and borrow formatted markdown from others.
+> - Markdown helps make your GitHub repos look professional and organized!
 
-- Bạn cũng có thể sử dụng những đoạn markdown của người khác đã viết trước để tham khảo.
+---
 
-Như vậy bạn đã có thể trình bày github của mình một cách sáng sủa bằng markdown.
+## III. Git & GitHub Operations
 
-<a name="cacthaotacvoigitvagithub"></a>
-## III. Các thao tác với Git và Github
-<a name="initializeproject"></a>
-### 1. Initialize project
-<a name="gitbasic"></a>
+### <a name="initialize-project"></a>1. Initialize Project
 
-- 1.1. Create a new repository on the command line
-```
+#### 1.1 Create new repository
+
+```sh
 echo "# initialize_repository" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/tranthanhhuy19032001/initialize_repository.git `change your reposioty url`
+git remote add origin https://github.com/username/your-repository.git  # Change to your repository URL
 git push -u origin main
 ```
-- 1.2. OR push an existing repository from the command line
-```
-git remote add origin https://github.com/tranthanhhuy19032001/initialize_repository.git
+
+#### 1.2 Push existing repository
+
+```sh
+git remote add origin https://github.com/username/your-repository.git
 git branch -M main
 git push -u origin main
 ```
-### 2. Git basic (regularly)
-<a name="gitreset"></a>
-### 3. Git reset
- - 3.1. Git reset
-      - Đầu tiên, sử dụng lệnh git reset để đặt HEAD của bạn về commit commit_id:
-        ```
-          git reset --hard [commit_id]
-        ```
-        OR
-        ```
-          git reset --soft [commit_id]
-        ```
-    - Lệnh này sẽ loại bỏ các commit trước của commit_id và đặt HEAD tại commit_id
-    - `Sự khác nhau giữa --hard và --soft:`
-        - --hard: Nó sẽ đặt lại HEAD về commit cụ thể và loại bỏ tất cả các thay đổi trong Index và thư mục làm việc. Các thay đổi chưa commit sẽ mất đi mà không có cơ hội khôi phục. Điều này có nghĩa là tất cả các thay đổi chưa commit (các commit ở trạng thái "Unstaged" và "Staged") sẽ mất đi và lịch sử sẽ được làm mới.
-        - --soft: Ngược lại, với --soft, HEAD được đặt lại vào commit cụ thể, nhưng thay đổi chưa commit vẫn được giữ nguyên trong Index. Điều này có nghĩa là bạn có thể thực hiện lại commit ngay lập tức nếu bạn muốn, và tất cả các thay đổi sẽ được thêm vào commit mới.
-- 3.2. Git Push
-  - Nếu dùng --hard:
-      ```
-        git push --force origin your_branch
-      ```
-  - Nếu dùng --soft
-      ```
-        git push origin your_branch
-      ```
 
-<a name="gitamend"></a>
-### 4. Git amend
-  - 4.1. Giữ nguyên comment log của commit
+---
+
+### <a name="git-basics"></a>2. Git Basics
+
+_Basic commands and daily workflow. See [Pro Git](https://git-scm.com/book/en/v2) for more._
+
+---
+
+### <a name="git-reset"></a>3. Git Reset
+
+#### 3.1 Reset to a specific commit
+
+- **Hard Reset:** _Resets HEAD and deletes all changes in working directory_
+    ```sh
+    git reset --hard [commit_id]
     ```
-      git commit --amend --no-edit
+- **Soft Reset:** _Keeps changes staged_
+    ```sh
+    git reset --soft [commit_id]
     ```
-  - 4.2. Thay đổi comment mới
+
+#### 3.2 Push changes after reset
+
+```sh
+git push --force origin your_branch    # after --hard
+git push origin your_branch            # after --soft
+```
+
+---
+
+### <a name="git-amend"></a>4. Git Amend
+
+#### 4.1 Keep commit message:
+```sh
+git commit --amend --no-edit
+```
+
+#### 4.2 Write new commit message:
+```sh
+git commit --amend -m "A new comment"
+```
+
+---
+
+### <a name="git-revert"></a>5. Git Revert
+
+_Revert a specific commit:_
+
+```sh
+git revert <commit-hash>
+```
+
+_Revert latest commit:_
+
+```sh
+git revert HEAD
+```
+
+---
+
+### <a name="git-merge"></a>6. Git Merge
+
+```sh
+git checkout destination_branch
+git merge source_branch
+```
+
+---
+
+### <a name="git-debase"></a>7. Git Debase
+
+_Refer to [Git Rebase Documentation](https://git-scm.com/docs/git-rebase)._
+
+---
+
+### <a name="git-cherry-pick"></a>8. Git Cherry-pick
+
+- **Single commit:**
+    ```sh
+    git checkout target_branch
+    git cherry-pick <commit-hash>
     ```
-      git commit --amend -m "A new comment"
+
+- **Multiple commits:**
+    ```sh
+    git cherry-pick commit_hash1 commit_hash2 commit_hash3
     ```
-<a name="gitrevert"></a>
-### 5. Git revert
-- Revert the commit.
-- Once you have the commit hash, use the git revert command followed by the commit hash.
-  ```
-    git revert <commit-hash>
-  ```
 
-- If you are reverting the last commit and know it's the HEAD of your current branch, you can use HEAD as a shorthand:
-```
-    git revert HEAD
-```
-- Git will then open a text editor to allow you to edit the commit message for the new revert commit. You can accept the default message or modify it to provide more context. Save and close the editor to complete the revert. Resolve any conflicts (if necessary).
+- **Range of commits:**
+    ```sh
+    git cherry-pick start_commit^..end_commit
+    ```
 
-<a name="gitmerge"></a>
-### 6. Git merge (regularly)
-```
-git checkout destination_branch_name
-git merge source_branch_name
-```
-<a name="gitdebase"></a>
-### 7. Git debase
+- **Without committing immediately:**
+    ```sh
+    git cherry-pick --no-commit <commit-hash>
+    # Modify, then
+    git add .
+    git commit
+    ```
 
-<a name="gitcherrypick"></a>
-### 8. Git cherry-pick
-- The git cherry-pick command allows you to apply specific commits from one branch onto another. This is useful for selectively transferring changes without merging entire branches.
-##### 1. Cherry-picking a Single Commit:
-- To apply a single commit from another branch to your current branch:
-```
-# First, ensure you are on the target branch where you want to apply the commit
-git checkout your_target_branch
+**Notes:**
+- Resolve conflicts by fixing files, then continue: `git cherry-pick --continue`
+- Abort cherry-pick: `git cherry-pick --abort`
+- For merge commits, use `-m` or `--mainline`.
 
-# Identify the commit hash (SHA) of the commit you want to cherry-pick.
-# You can find this using `git log` on the source branch.
-# For example, if the commit hash is `abcdef1234567890`
-git cherry-pick abcdef1234567890
-```
-##### 2. Cherry-picking Multiple Commits:
-- To apply multiple specific commits:
-```
-# Ensure you are on the target branch
-git checkout your_target_branch
+---
 
-# Specify the commit hashes in order
-git cherry-pick commit_hash_1 commit_hash_2 commit_hash_3
-```
+### <a name="resolving-conflicts"></a>9. Resolving Conflicts
 
-##### 3. Cherry-picking a Range of Commits:
-- To apply a sequence of commits within a range:
-```
-# Ensure you are on the target branch
-git checkout your_target_branch
+1. **Identify conflicts:**
+    ```sh
+    git status
+    ```
 
-# Cherry-pick all commits from `start_commit_hash` (exclusive) up to `end_commit_hash` (inclusive).
-# The `^` indicates the commit *before* the start commit.
-git cherry-pick start_commit_hash^..end_commit_hash
-```
-##### 4. Cherry-picking without Committing Immediately:
-- If you want to apply the changes but not create a new commit immediately, allowing for further modifications before committing:
-```
-# Ensure you are on the target branch
-git checkout your_target_branch
+2. **Edit files & remove conflict markers:**
+    - Look for `<<<<<<<`, `=======`, `>>>>>>>` and choose your final code
+    - Remove the markers, save the file
 
-git cherry-pick --no-commit commit_hash
-# Now, the changes are in your working directory.
-# You can modify them, then `git add` and `git commit` as usual.
-```
-##### Important Notes:
-- Conflicts: If the cherry-picked commit introduces changes that conflict with your current branch, Git will pause the operation and require you to resolve the conflicts. After resolving, git add the conflicted files and then run git cherry-pick --continue.
-- Aborting: If you decide to cancel a cherry-pick in progress (e.g., due to unresolvable conflicts), use git cherry-pick --abort.
-- Merge Commits: Cherry-picking a merge commit can be complex. You might need to use the -m or --mainline option to specify which parent of the merge commit represents the "mainline" changes you want to apply. For example: git cherry-pick -m 1 merge_commit_hash
+3. **Stage and commit:**
+    ```sh
+    git add .
+    git commit -m "Resolve merge conflict"
+    ```
 
-<a name="resolveconflicts"></a>
-### 9. Resolve conflicts
-- You want to merge a feature branch into a target branch. But, the changes are conflicted. So, how to fix the conflict?
-- To fix a Git merge conflict, you must first identify the conflicting files and then manually edit them to choose which code to keep, deleting the conflict markers (<<<<<<<, =======, >>>>>>>). After saving the changes, you add the files to the staging area with git add . and commit the merge to finalize the process. 
-##### Step 1: Identify conflicting files
-- git status will show a list of files that have unmerged paths.
-- You can also use a merge tool or IDE to help identify these files. 
-##### Step 2: Resolve conflicts in each file
-- Open each conflicting file in your code editor.
-- Search for the conflict markers (<<<<<<<, =======, >>>>>>>) to find the conflicting sections.
-- Edit the code to be the final version you want, which may mean keeping only one change, or combining changes from both branches.
-- Delete the conflict markers (<<<<<<<, =======, >>>>>>>) completely.
-- Save the file. 
-##### Step 3: Stage and commit the changes
-- After resolving all conflicts, stage the modified files using git add .
-- Commit the merge to complete the process by running git commit -m "Your commit message". 
-##### Alternative methods
-- Merge Editor: Many IDEs offer a three-way merge editor that visually shows the conflict and provides buttons to accept one or both versions of the code, making the process easier.
-- Rebasing: For a cleaner history, you can rebase your feature branch onto the target branch instead of merging, which involves resolving conflicts one commit at a time.
-- Using a remote UI: You can resolve conflicts through a platform's web interface, such as GitHub, by clicking "Resolve conflicts" on the pull request and using the provided interface to choose which code to keep, then - clicking "Commit merge". 
+**Other methods:**  
+- Use your IDE’s merge editor for a visual process  
+- Rebase for a clean history  
+- Resolve through GitHub’s "Resolve conflicts" web interface
+
+---
+
+Enjoy coding and collaborating with a clean, well-documented workflow!
