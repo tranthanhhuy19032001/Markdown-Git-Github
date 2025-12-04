@@ -23,7 +23,7 @@
   - [9. Resolving Conflicts](#resolving-conflicts)
 
 ---
-
+<a name="introduction"></a>
 ## I. Introduction
 
 Git and GitHub are essential tools for modern developers. Version control makes managing, sharing, and collaborating on code efficient and safe.
@@ -31,7 +31,7 @@ Git and GitHub are essential tools for modern developers. Version control makes 
 This document provides a concise overview of Git, GitHub, and Markdown, with step-by-step instructions for common operations and useful tips.
 
 ---
-
+<a name="markdown-language"></a>
 ## II. Markdown Language
 
 Markdown is a simple markup language. For the complete syntax, see [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax).
